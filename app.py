@@ -55,10 +55,10 @@ def index():
         
         s = f"""
 Will the person Default in payment: 
-1. Log Reg: {log_pred1}
-2. CART: {cart_pred1}
-3. Random Forest: {rf_pred1}
-4. XGBoost: {xgb_pred1}
+1. Log Reg: {log_pred1} /n
+2. CART: {cart_pred1} /n
+3. Random Forest: {rf_pred1} /n
+4. XGBoost: {xgb_pred1} /n
 5. MLP: {mlp_pred1} """
         return (render_template("index.html", result = s))
     else:
