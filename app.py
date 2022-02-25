@@ -57,15 +57,15 @@ def index():
 
         #result1['Default?'] = np.where(result1.Outcome>0.5,'Default', 'Not Default')
         
-         s = f"""
- The predicted Outcome for various models are: 
- 1. The outcome for Log Reg is {result1['Default?'][0]}
+         #s = f"""
+ #The predicted Outcome for various models are: 
+ #1. The outcome for Log Reg is {result1['Default?'][0]}
 # 2. The outcome for CART is {result1['Default?'][1]}
 # 3. The outcome for Random Forest is {result1['Default?'][2]}
 # 4. The outcome for XGBoost is {result1['Default?'][3]}
 # 5. The outcome for MLP is {result1['Default?'][4]}
-         """
-        return (render_template("index.html", result = s))
+         #"""
+        return (render_template("index.html", result = log_pred))
     else:
         return (render_template("index.html", result = "Please Enter the values"))
 
