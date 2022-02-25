@@ -54,11 +54,11 @@ def index():
         mlp_pred1 = 'No' if float(mlp_pred[0])<0.5 else 'Yes'
         
         s = f"""
-Will the person Default in payment: 
-1. Log Reg: {log_pred1} /n
-2. CART: {cart_pred1} /n
-3. Random Forest: {rf_pred1} /n
-4. XGBoost: {xgb_pred1} /n
+Will the person Default in payment: \n
+1. Log Reg: {log_pred1} \n
+2. CART: {cart_pred1} \n
+3. Random Forest: {rf_pred1} \n 
+4. XGBoost: {xgb_pred1} \n
 5. MLP: {mlp_pred1} """
         return (render_template("index.html", result = s))
     else:
