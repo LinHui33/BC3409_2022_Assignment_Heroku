@@ -26,10 +26,8 @@ def index():
         loan = float(request.form.get("loan"))
         
         import joblib
-        import pandas as pd
         import numpy as np
-        df = pd.read_csv("Credit Card Default II (balance).csv")
-        
+
         #import different models
         log_model = joblib.load("log_model")
         cart_model = joblib.load("cart_model")
@@ -44,11 +42,11 @@ def index():
         xgb_pred = xgb_model.predict([[income,age,loan]])
         
         #Normalize the data for MLP model
-        norm_income = (income - df.income.min())/(df.income.max() - df.income.min())
-        norm_age = (age-df.age.min())/(df.age.max() - df.age.min())
-        norm_loan = (loan - df.loan.min())/(df.loan.max() - df.loan.min())
-
+        norm_income = (income - 20014.48947)/(69995.685580 - 20014.48947)
+        norm_age = (age-18.055189)/(63.971796 - 18.055189)
+        norm_loan = (loan - 1.377630)/(13766.051240 - 1.377630)
         
+        #Preditions
         log_pred = log_model.predict([[income,age,loan]])
         cart_pred = cart_model.predict([[income,age,loan]])
         rf_pred = rf_model.predict([[income,age,loan]])
