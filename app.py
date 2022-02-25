@@ -65,9 +65,9 @@ def index():
 # 3. Random Forest: {rf_pred1} 
 # 4. XGBoost: {xgb_pred1}
 # 5. MLP: {mlp_pred1} """
-        return (render_template("index.html", result1 = s1, result2 = s2, result3 = s3,result4 = s5, result5 = s5))
+        return (render_template("index.html", result1 = s1, result2 = s2, result3 = s3,result4 = s4, result5 = s5))
     else:
-        return (render_template("index.html", result = "Please Enter the values"))
+        return (render_template("index.html", result1 = "Please Enter the values"))
 
 
 # In[23]:
