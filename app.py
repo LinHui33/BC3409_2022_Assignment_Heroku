@@ -53,14 +53,19 @@ def index():
         xgb_pred1 = 'No' if float(xgb_pred[0])<0.5 else 'Yes'
         mlp_pred1 = 'No' if float(mlp_pred[0])<0.5 else 'Yes'
         
-        s = f"""
-Will the person Default in payment: <br />
-1. Log Reg: {log_pred1} <br />
-2. CART: {cart_pred1} <br />
-3. Random Forest: {rf_pred1} <br />
-4. XGBoost: {xgb_pred1} <br />
-5. MLP: {mlp_pred1} """
-        return (render_template("index.html", result = s))
+        s1 = f"1. Log Reg: {log_pred1}"
+        s2 = f"2. CART: {cart_pred1}"
+        s3 = f"3. Random Forest: {rf_pred1}"
+        s4 = f"4. XGBoost: {xgb_pred1}"
+        s5 = f"5. MLP: {mlp_pred1}"
+#         s = f"""
+# Will the person Default in payment:
+# 1. Log Reg: {log_pred1} 
+# 2. CART: {cart_pred1} 
+# 3. Random Forest: {rf_pred1} 
+# 4. XGBoost: {xgb_pred1}
+# 5. MLP: {mlp_pred1} """
+        return (render_template("index.html", result1 = s1, result2 = s2, result3 = s3,result4 = s5, result5 = s5))
     else:
         return (render_template("index.html", result = "Please Enter the values"))
 
